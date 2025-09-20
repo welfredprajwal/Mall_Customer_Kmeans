@@ -9,20 +9,24 @@ The dataset includes features such as Age, Annual Income, and Spending Score, wh
 
 # Dataset
 
-The dataset consists of the following columns:
+| Feature                | Description                                                        |
+| ---------------------- | ------------------------------------------------------------------ |
+| CustomerID             | Unique identifier for each customer (not used for clustering)      |
+| Gender                 | Male/Female (can be encoded as 0/1 for ML)                         |
+| Age                    | Age of the customer in years                                       |
+| Annual Income (k\$)    | Customer's annual income in thousands of dollars                   |
+| Spending Score (1-100) | Score assigned based on spending behavior (higher = more spending) |
 
-CustomerID		Unique identifier for each customer (not used for clustering)
+# Why K-Means?
 
-Gender	Male/Female (can be encoded as 0/1 for ML)
+K-Means is an unsupervised learning algorithm used for clustering:
 
-Age		Age of the customer in years
+  Groups data points into k clusters based on similarity
+  Minimizes intra-cluster variance (distance from cluster center)
+  Useful for discovering patterns without labeled data
+  Helps businesses target specific customer segments effectively
 
-Annual Income (k$)	Customer's annual income in thousands of dollars
-
-Spending Score (1-100)		Score assigned based on customer spending behavior (higher = more spending)
-
-
-# Workflow
+# Project Workflow
 
 1.Data Preprocessing
 
@@ -30,40 +34,24 @@ Spending Score (1-100)		Score assigned based on customer spending behavior (high
 
   Drop irrelevant columns (CustomerID)
 
-  Feature scaling (optional for better clustering performance)
+  Feature scaling (optional, improves clustering performance)
 
 2.Exploratory Data Analysis (EDA)
 
-  Analyze distributions of Age, Income, and Spending Score
+  Analyze distributions of Age, Annual Income, and Spending Score
 
-  Visualize relationships and trends
+  Visualize relationships and trends using histograms, boxplots, and scatter plots
 
 3.K-Means Clustering
 
   Determine the optimal number of clusters using the Elbow Method
 
-  Fit the K-Means model on selected features
+  Fit the K-Means model on selected features (Annual Income & Spending Score)
 
   Assign cluster labels to each customer
 
 4.Visualization and Interpretation
 
-  Plot clusters using scatter plots
+  Scatter plots of clusters to visualize segmentation
 
-  Analyze characteristics of each segment
-
-# Key Insights
-
-Each cluster represents a customer segment with similar spending patterns and income.
-
-Typical segments include:
-
-High-income, high-spending → Premium customers
-
-Young, low-spending → Potential for targeted campaigns
-
-Middle-aged, moderate-spending → Loyal customers
-
-Older, low-spending → Cost-sensitive segment
-
-Other niche segments
+  Analyze characteristics of each segment to identify actionable insights
